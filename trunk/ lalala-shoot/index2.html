@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=Big5">
+	<title>Lalala</title>
+	
+	<script src="http://www.google.com/jsapi?key=ABQIAAAAqVM9OkQ3PgHSRXitSGk_fBTS8aYyp8OGiw2SkbQl8G43QjhTORRFY77YvpTiBTYkGENIq5qID6VZkA"></script>
+	<script type="text/javascript" src="js/math3d.js"></script>
+	<script type="text/javascript" src="js/firstpersoncam.js"></script>
+	<script type="text/javascript" src="js/ver31.js"></script>
+	<script type="text/javascript" src="js/jquery.jplayer.js"></script>
+	
+	<script src="http://cdn.jquerytools.org/1.0.2/jquery.tools.min.js"></script> 
+	<script src="js/reflection.min.js"></script> 
+	 
+	<link rel="stylesheet" type="text/css" href="boxed.css"/> 
+</head>
+
+<body onload='init()' onunload="GUnload()" onKeyDown="return keyDown(event);" onKeyUp="return keyUp(event);" id='body'>
+<div id="header">
+		<!--<a><img src="image/lalal-header.png" style="position: absolute; top: 10px; left: 20px;" /></a>-->
+	<div style="position: absolute; height: 30px; font-size: 36pt;">
+		<font color="#59b858">L</font>
+		<font color="#f6db6b">a</font>
+		<font color="#59b858">l</font>
+		<font color="#497ED4">a</font>
+		<font color="#59b858">l</font>
+		<font color="#E46D58">a</font>
+		<a style="color: #3FBBEE; font-family: microsoft Jhenghei; font-size: 24pt;" ></a>
+	</div>
+	<div id='tostarter' style="position: absolute; right: 0; height: 30px; bottom: 15px;">
+		<img style="cursor:pointer;" rel="#overlay" src="image/new.png"/>
+	</div>
+</div>
+<div id="context">
+	<div id='map3d_container'>
+		<div id='map3d'></div>
+	</div>
+	<div id='sider'>
+		<div id='key_note' style="font-family: verdana; position: absolute; width:100%;" >
+			<img width="100%" src="image/key1.PNG"/>
+			<br>
+		</div>
+		<div style="position: absolute; color: #555; font-size: 36pt; top: 32%; left: 12%; width: 50%;">Time</div>
+		<div style="position: absolute; color: #555; font-size: 36pt; top: 51%; left: 12%; width: 50%;">Enemy</div>
+		<div id="time"  style="position: absolute; color: #ddd; font-size: 60pt; top: 34%; right: 24%; text-align: right; width: 50%;"></div>
+		<div id="enemy" style="position: absolute; color: #ddd; font-size: 60pt; top: 53%; right: 24%; text-align: right; width: 50%;"></div>
+		<div id='map2d'></div>
+	<!--
+    <div id="progress-container" style="width: 100%; height: 10px; border: 1px solid #ccc;">
+		<div id="progress-bar" style="width: 0; height: 10px;"></div>
+	</div><br/>
+	-->
+	</div>
+</div>
+
+<div class="overlay" id="overlay"> 
+	<!-- thumbnail scrollable --> 
+	<div style="top: 50px; left: 90px; right: 90px; position: absolute;">
+		<div id="container">
+			<div id="text"><h1>Scene</h1></div>
+			<div id="thumbnails1"> 
+				<div class="items"> 
+					<div>
+						<div class="info"> 
+							<h3>San Francisco</h3> 
+							<p>The City and County of San Francisco is the fourth most populous city in California and the 13th most populous city in the United States, with a 2008 estimated population of 808,976.</p> 
+						</div> <br/>
+						<img src="image/SanFrancisco.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Pismo</h3> 
+							<p>Pismo State Beach is a beach on the Pacific coast of California, located in the city of Oceano in San Luis Obispo County, California. It is protected as part of the California Department of Parks and Recreation.
+The area covers beach, dunes, and forest.</p> 
+						</div> <br/>
+						<img src="image/pismo.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Whistler</h3> 
+							<p>Whistler Mountain is a peak in the Fitzsimmons Range on the northwestern edge of Garibaldi Provincial Park, and the location of the ski resort and the town of Whistler, British Columbia.</p> 
+						</div> <br/>
+						<img src="image/whistler.gif" width="200" height="140" />
+					</div> 
+				</div> 
+			</div> 
+			<div class="navi prevPage1"></div> 
+			<div class="navi nextPage1"></div>
+		</div> 
+		
+		<div id="container">
+			<div id="text"><h1>Me</h1></div>
+			<div id="thumbnails2"> 
+				<div class="items"> 
+					<div>
+						<div class="info"> 
+							<h3>Army girl</h3> 
+							<p>Army Girls Gone Wild is a three-song album by Devo spinoff project Jihad Jerry & the Evildoers, fronted by Gerald Casale. It was released November 8, 2005 but has since been expanded into the 12-track album Mine Is Not A Holy War (2006).</p> 
+						</div> <br/>
+						<img src="image/armygirl.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Dinasour</h3> 
+							<p>Dinosaurs were the dominant vertebrate animals of terrestrial ecosystems for over 160 million years, from the late Triassic period (about 230 million years ago) until the end of the Cretaceous period (65 million years ago), when most of them became extinct in the Cretaceous–Tertiary extinction event.</p> 
+						</div> <br/>
+						<img src="image/dinasour.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>UFO</h3> 
+							<p>Unidentified flying object is the popular term for any aerial phenomenon whose cause cannot be easily or immediately determined.</p> 
+						</div> <br/><img src="image/ufo.gif" width="200" height="140" />
+					</div> 
+				</div> 
+			</div> 
+			<div class="navi prevPage2"></div> 
+			<div class="navi nextPage2"></div>
+		</div> 
+		
+		<div id="container">
+			<div id="text"><h1>Enemy</h1></div>
+			<div id="thumbnails3"> 
+				<div class="items"> 
+					<div>
+						<div class="info"> 
+							<h3>Slime</h3> 
+							<p>Slime was a toy product manufactured by Mattel and introduced in the winter of 1976. Slime consisted of a viscous, oozing green material made primarily from guar gum[1] and sold in a plastic trash can.</p> 
+						</div> <br/>
+						<img src="image/slime.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Target</h3> 
+							<p>A Target is any entity whose existence is the object of goal accomplishment by another entity's intended action results.</p> 
+						</div> <br/>
+						<img src="image/target.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Chopper</h3> 
+							<p>Tony Tony Chopper (トニートニー・チョッパー) is the crew's 15-year-oldch.167 doctor. He is a blue-nosed reindeer, who gained human properties by eating the Human-Human Fruit (ヒトヒトの実). He is capable of conversing with humans and animals alike.</p> 
+						</div> <br/>
+						<img src="image/chopper.gif" width="200" height="140" />
+					</div> 
+				</div> 
+			</div> 
+			<div class="navi prevPage3"></div> 
+			<div class="navi nextPage3"></div>
+		</div> 
+	</div>
+	
+	<div style="bottom: 44px; right: 150px; position: absolute;">
+		<div class="navi4"></div> 
+		<div id="thumbnails4"> 
+			<div class="items"> 
+				<div>
+					<img src="image/easy.png"/>
+				</div> 
+				<div>
+					<img src="image/medium.png"/>
+				</div> 
+				<div>
+					<img src="image/hard.png"/>
+				</div> 
+			</div> 
+		</div> 
+		<div class="navi4 prevPage4"></div> 
+		<div class="navi4 nextPage4"></div>
+	</div>
+	
+	<div style="bottom: 50px; right: 70px; position: absolute; 	cursor:pointer;" >
+		<img type="button" onClick="ini_game()" src="image/play.png"></button>
+	</div>
+</div>
+
+
+<script> 
+
+var scene, me, enemy;
+var over;
+var difficulty;
+
+var body_expose =	$("body").expose({ 
+					color: '#BAD0DB', 
+					opacity: 0.7
+				}).load();
+
+	var shimmer = document.createElement('iframe');
+	shimmer.id='shimmer';
+	shimmer.style.position='absolute';
+	shimmer.style.width='98%';
+	shimmer.style.height='98%';
+	shimmer.style.zIndex='999';
+	shimmer.setAttribute('frameborder','0');
+
+
+$(function() { 
+
+
+	over = $("img[rel]").overlay({
+				onBeforeLoad: function(){
+					document.body.appendChild(shimmer);
+				},
+				onClose: function(){
+					document.body.removeChild(shimmer);
+				},
+				expose: { 
+					color: '#BAD0DB', 
+					opacity: 0.7, 
+					closeSpeed: 1000 
+				},
+				finish: {top: 0},
+				speed: 1500,
+				api: true
+			}); 
+	
+	// thumbnail scrollable
+	scene = $("#thumbnails1").scrollable({size: 1, clickable: false, prevPage: ".prevPage1", nextPage: ".nextPage1", loop: true, keyboard: false, api: true,});
+	me = $("#thumbnails2").scrollable({size: 1, clickable: false, prevPage: ".prevPage2", nextPage: ".nextPage2", loop: true, keyboard: false, api: true,});
+	enemy = $("#thumbnails3").scrollable({size: 1, clickable: false, prevPage: ".prevPage3", nextPage: ".nextPage3", loop: true, keyboard: false, api: true,});
+	difficulty = $("#thumbnails4").scrollable({size: 1, clickable: false, prevPage: ".prevPage4", nextPage: ".nextPage4", navi: ".navi4", loop: true, keyboard: false, api: true, speed:	0});
+
+	
+	// enable reflections
+	$("#thumbnails1 img").reflect({height: 0.35, opacity: 0.3});
+	$("#thumbnails2 img").reflect({height: 0.35, opacity: 0.3});
+	$("#thumbnails3 img").reflect({height: 0.35, opacity: 0.3});
+});
+
+
+function ini_game(){
+	user = me.getPageIndex() + 1;
+	//opponent = enemy.getPageIndex() + 1;
+	
+	/*switch (scene.getPageIndex()){
+		case 0:
+			lat = 37.7933;
+			log = -122.3999;
+			break;
+		case 1:
+			lat = 35.040675;
+			log = -120.629513;
+			break;
+		case 2:
+			lat = 50.085734;
+			log = -122.855824;
+			break;
+		default:
+			lat = 37.79333;
+			log = -122.4;
+	}*/
+	lat = LatArray[scene.getPageIndex()];
+	log = LogArray[scene.getPageIndex()];
+	
+	user_height = UserHeightArray[me.getPageIndex()];
+	//LEVEL CHOICE
+	
+	var temp = EnemyArray[enemy.getPageIndex()];
+	link_text = temp.link_text;
+	scale = temp.scale;
+	height = temp.height;
+	lat_shift = temp.lat_shift;
+	log_shift = temp.log_shift;
+	height_shift = temp.height_shift;
+	
+	total_time = TotalTimeArray[difficulty.getPageIndex()];
+	level = difficulty.getPageIndex() + 1;
+	opponent = enemy.getPageIndex() + 1;
+	//document.Watch2.watch2.value = 'level:'+level;
+	//if (second_time_play_bool == true) ResetMap();
+	UserRelated();
+	over.close();
+	
+	document.getElementById('time').style.color = '#ddd';
+}
+/*
+var progressBar = document.getElementById('progress-bar');
+var total_time = 100;
+
+function checkTime(remain_time) {
+	var percent = 100*remain_time/total_time;
+	progressBar.style.width = percent + '%';
+	
+    if (percent > 70) {
+		progressBar.style.backgroundColor = '#0a0';
+    } else if (percent > 40){
+		progressBar.style.backgroundColor = '#00f';
+	} else{
+		progressBar.style.backgroundColor = '#f00';
+	}
+}
+
+<p>
+<form name = "Watch2">
+<input type = "text" name = "watch2" size = "15">
+</form>
+*/
+
+</script> 
+
+<font color="#00FFFF"></font><font  color="#CCFFCC" id="music_show"></font> 
+<font color="#00FFFF"></font><font  color="#CCFFCC" id="music_back"></font> 
+
+<div id="music1"></div>
+<div id="music2"></div>
+<div id="music3"></div>
+<div id="music4"></div>
+<div id="music5"></div>
+<div id="music6"></div>
+
+
+</body>
+</html>
+ 
+ 
+ 

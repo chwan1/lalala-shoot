@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Lalala</title>
+	
+	<script src="http://www.google.com/jsapi?key=ABQIAAAAqVM9OkQ3PgHSRXitSGk_fBTS8aYyp8OGiw2SkbQl8G43QjhTORRFY77YvpTiBTYkGENIq5qID6VZkA"></script>
+	
+	<script src="http://cdn.jquerytools.org/1.0.2/jquery.tools.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.jplayer.js"></script>
+	
+	<script type="text/javascript" src="js/math3d.js"></script>
+	<script type="text/javascript" src="js/firstpersoncam.js"></script>
+	<script type="text/javascript" src="js/ver31.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="boxed.css"/> 
+</head>
+
+<body onunload="GUnload()" onKeyDown="return keyDown(event);" onKeyUp="return keyUp(event);" id='body'>
+<div id="header">
+		<!--<a><img src="image/lalal-header.png" style="position: absolute; top: 10px; left: 20px;" /></a>-->
+	<div style="position: absolute; height: 30px; font-size: 36pt;">
+		<font color="#59b858">L</font>
+		<font color="#f6db6b">a</font>
+		<font color="#59b858">l</font>
+		<font color="#497ED4">a</font>
+		<font color="#59b858">l</font>
+		<font color="#E46D58">a</font>
+		<a style="color: #3FBBEE; font-family: microsoft Jhenghei; font-size: 24pt;" >大亂鬥</a>
+	</div>
+	<div id='tostarter' style="position: absolute; right: 0; height: 30px; bottom: 15px;">
+		<img style="cursor:pointer;" rel="#overlay" src="image/new.png"/>
+	</div>
+</div>
+<div id="context">
+	<div id='map3d_container'>
+		<div id='map3d'></div>
+	</div>
+	<div id='sider'>
+		<div id='key_note' style="font-family: verdana; position: absolute; width:100%;" >
+			<img width="100%" src="image/key1.PNG"/>
+			<br>
+		</div>
+		<div style="position: absolute; color: #555; font-size: 36pt; top: 32%; left: 12%; width: 50%;">Time</div>
+		<div style="position: absolute; color: #555; font-size: 36pt; top: 51%; left: 12%; width: 50%;">Enemy</div>
+		<div id="time"  style="position: absolute; color: #ddd; font-size: 60pt; top: 34%; right: 24%; text-align: right; width: 50%;"></div>
+		<div id="enemy" style="position: absolute; color: #ddd; font-size: 60pt; top: 53%; right: 24%; text-align: right; width: 50%;"></div>
+		<div id='map2d'></div>
+	<!--
+    <div id="progress-container" style="width: 100%; height: 10px; border: 1px solid #ccc;">
+		<div id="progress-bar" style="width: 0; height: 10px;"></div>
+	</div><br/>
+	-->
+	</div>
+</div>
+
+<div class="overlay" id="overlay"> 
+	<!-- thumbnail scrollable --> 
+	<div style="top: 50px; left: 90px; right: 90px; position: absolute;">
+		<div id="container">
+			<div id="text"><h1>Scene</h1></div>
+			<div id="thumbnails1"> 
+				<div class="items"> 
+					<div>
+						<div class="info"> 
+							<h3>San Francisco</h3> 
+							<p>The City and County of San Francisco is the fourth most populous city in California and the 13th most populous city in the United States, with a 2008 estimated population of 808,976.</p> 
+						</div> <br/>
+						<img src="image/SanFrancisco.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Pismo</h3> 
+							<p>Pismo State Beach is a beach on the Pacific coast of California, located in the city of Oceano in San Luis Obispo County, California. It is protected as part of the California Department of Parks and Recreation.
+The area covers beach, dunes, and forest.</p> 
+						</div> <br/>
+						<img src="image/pismo.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Whistler</h3> 
+							<p>Whistler Mountain is a peak in the Fitzsimmons Range on the northwestern edge of Garibaldi Provincial Park, and the location of the ski resort and the town of Whistler, British Columbia.</p> 
+						</div> <br/>
+						<img src="image/whistler.gif" width="200" height="140" />
+					</div> 
+				</div> 
+			</div> 
+			<div class="navi prevPage1"></div> 
+			<div class="navi nextPage1"></div>
+		</div> 
+		
+		<div id="container">
+			<div id="text"><h1>Me</h1></div>
+			<div id="thumbnails2"> 
+				<div class="items"> 
+					<div>
+						<div class="info"> 
+							<h3>Army girl</h3> 
+							<p>Army Girls Gone Wild is a three-song album by Devo spinoff project Jihad Jerry & the Evildoers, fronted by Gerald Casale. It was released November 8, 2005 but has since been expanded into the 12-track album Mine Is Not A Holy War (2006).</p> 
+						</div> <br/>
+						<img src="image/armygirl.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Dinasour</h3> 
+							<p>Dinosaurs were the dominant vertebrate animals of terrestrial ecosystems for over 160 million years, from the late Triassic period (about 230 million years ago) until the end of the Cretaceous period (65 million years ago), when most of them became extinct in the Cretaceous–Tertiary extinction event.</p> 
+						</div> <br/>
+						<img src="image/dinasour.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>UFO</h3> 
+							<p>Unidentified flying object is the popular term for any aerial phenomenon whose cause cannot be easily or immediately determined.</p> 
+						</div> <br/><img src="image/ufo.gif" width="200" height="140" />
+					</div> 
+				</div> 
+			</div> 
+			<div class="navi prevPage2"></div> 
+			<div class="navi nextPage2"></div>
+		</div> 
+		
+		<div id="container">
+			<div id="text"><h1>Enemy</h1></div>
+			<div id="thumbnails3"> 
+				<div class="items"> 
+					<div>
+						<div class="info"> 
+							<h3>Slime</h3> 
+							<p>Slime was a toy product manufactured by Mattel and introduced in the winter of 1976. Slime consisted of a viscous, oozing green material made primarily from guar gum[1] and sold in a plastic trash can.</p> 
+						</div> <br/>
+						<img src="image/slime.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Target</h3> 
+							<p>A Target is any entity whose existence is the object of goal accomplishment by another entity's intended action results.</p> 
+						</div> <br/>
+						<img src="image/target.gif" width="200" height="140"/>
+					</div> 
+					<div>
+						<div class="info"> 
+							<h3>Chopper</h3> 
+							<p>Tony Tony Chopper (トニートニー・チョッパー) is the crew's 15-year-oldch.167 doctor. He is a blue-nosed reindeer, who gained human properties by eating the Human-Human Fruit (ヒトヒトの実). He is capable of conversing with humans and animals alike.</p> 
+						</div> <br/>
+						<img src="image/chopper.gif" width="200" height="140" />
+					</div> 
+				</div> 
+			</div> 
+			<div class="navi prevPage3"></div> 
+			<div class="navi nextPage3"></div>
+		</div> 
+	</div>
+	
+	<div style="bottom: 50px; right: 150px; position: absolute;">
+		<div class="navi4"></div> 
+		<div id="thumbnails4"> 
+			<div class="items"> 
+				<div>
+					<img src="image/easy.png"/>
+				</div> 
+				<div>
+					<img src="image/medium.png"/>
+				</div> 
+				<div>
+					<img src="image/hard.png"/>
+				</div> 
+			</div> 
+		</div> 
+		<div class="navi4 prevPage4"></div> 
+		<div class="navi4 nextPage4"></div>
+	</div>
+	
+	<div style="bottom: 52px; right: 70px; position: absolute; 	cursor:pointer;" >
+		<img id="ini_game" src="image/play.png"/>
+	</div>
+</div>
+
+<div id="music_back_ground"></div>
+<div id="music_gun"></div>
+<div id="music_dead"></div>
+<div id="music_win"></div>
+<div id="music_lose"></div>
+
+
+</body>
+</html>
+ 
+ 
+ 
