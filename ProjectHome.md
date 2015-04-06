@@ -1,0 +1,1 @@
+a web based shooting game featuring real world themes, powered by Google earth.
